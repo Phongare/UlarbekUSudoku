@@ -27,3 +27,13 @@ What can I say here, I used ArrayList only in makingBoard because i can't even d
 
 ## Challenges
 The whole project was a challenge, it seems like I checked the all Internet. The feeling when you go to sleep and don't understand what you typed yesterday. if i didn't use Internet i'd never know how to create Sudokugame creator because it's too hard for me, + i had problems with Random and Time. + I used Chatgpt to check does even Sudoku have solution.
+
+### SCREENSHOTS
+
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(1).png)
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(2).png)
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(3).png)
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(4).png)
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(5).png)
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(6).png)
+![image alt](https://github.com/Phongare/UlarbekUSudoku/blob/71339dcafbec7407671cb1cadc6314262c9d0979/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20(7).png)
