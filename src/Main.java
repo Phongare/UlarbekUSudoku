@@ -15,17 +15,30 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Sudoku Puzzle Game!");
         while (true) {
-            System.out.println("\nChoose difficulty level:");
-            System.out.println("1. Easy");
-            System.out.println("2. Medium");
-            System.out.println("3. Hard");
-            System.out.print("Enter your choice: ");
-            int choice = input.nextInt();
+            int choice = 0;
+            while (true) {
+                System.out.println("\nChoose difficulty level:");
+                System.out.println("1. Easy");
+                System.out.println("2. Medium");
+                System.out.println("3. Hard");
+                System.out.print("Enter your choice: ");
+                String line = input.nextLine().trim();
+                try {
+                    choice = Integer.parseInt(line);
+                    if (choice < 1 || choice > 3) {
+                        System.out.println("Invalid values");
+                        continue;
+                    }
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid values");
+                }
+            }
             generateGame(choice);
             play(input);
             System.out.print("Do you want to play again? (Y/N): ");
-            char again = input.next().charAt(0);
-            if (again == 'N' || again == 'n') {
+            String again = input.nextLine().trim();
+            if (again.equalsIgnoreCase("n")) {
                 System.out.println("Thank you for playing Sudoku Puzzle Game!");
                 break;
             }
@@ -40,14 +53,30 @@ public class Main {
         while (true) {
             showBoard();
             System.out.print("Enter your solution (row col value) or 'q' to quit: ");
-            if (input.hasNext("q")) {
+            String line = input.nextLine().trim();
+            if (line.equalsIgnoreCase("q")) {
                 System.out.println("Game exited.");
-                input.next();
                 return;
             }
-            int row = input.nextInt() - 1;
-            int col = input.nextInt() - 1;
-            int num = input.nextInt();
+            String[] tokens = line.split("\\s+");
+            if (tokens.length != 3) {
+                System.out.println("Invalid values");
+                continue;
+            }
+            int row, col, num;
+            try {
+                row = Integer.parseInt(tokens[0]) - 1;
+                col = Integer.parseInt(tokens[1]) - 1;
+                num = Integer.parseInt(tokens[2]);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid values");
+                continue;
+            }
+
+            if (row < 0 || row >= 9 || col < 0 || col >= 9 || num < 1 || num > 9) {
+                System.out.println("Invalid values");
+                continue;
+            }
 
             if (solution[row][col] != 0 && noSolution[row][col] != 0) {
                 System.out.println("You cannot change given numbers!");
@@ -67,13 +96,14 @@ public class Main {
 
             if (isSolved()) {
                 long elapsedTime = (System.currentTimeMillis() - timeStart) / 1000;
-                System.out.printf("Congratulations! You solved the Sudoku puzzle in %d minutes and %d seconds!\n", elapsedTime / 60, elapsedTime % 60);
+                System.out.printf("Congratulations! You solved the Sudoku puzzle in %d minutes and %d seconds!\n",
+                        elapsedTime / 60, elapsedTime % 60);
                 break;
             }
         }
     }
 
-    public void generateGame(int difficulty) {
+    public void generateGame(int choice) {
         System.out.println("\nGenerating Sudoku puzzle...");
 
         for (int i = 0; i < 9; i++) {
@@ -89,7 +119,7 @@ public class Main {
             System.arraycopy(solution[i], 0, noSolution[i], 0, 9);
         }
 
-        int clues = (difficulty == 1 ? 35 : (difficulty == 2 ? 27 : 20));
+        int clues = (choice == 1 ? 35 : (choice == 2 ? 27 : 20));
         removeNumbers(clues);
     }
 
